@@ -272,6 +272,7 @@ const ReactElement = function(type, key, ref, self, source, owner, props) {
  */
 export function createFactory(type) {
   const factory = createElement.bind(null, type);
+  // 工厂函数
   // Expose the type on the factory and the prototype so that it can be
   // easily accessed on elements. E.g. `<Foo />.type === Foo`.
   // This should not be named `constructor` since this may not be the function
