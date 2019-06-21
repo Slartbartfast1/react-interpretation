@@ -358,6 +358,7 @@ function mapSingleChildIntoContext(bookKeeping, child, childKey) {
   }
 }
 
+// 摊平数组
 function mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {
   // 这里是处理 key，不关心也没事
   let escapedPrefix = '';
