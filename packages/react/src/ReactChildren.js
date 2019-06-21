@@ -333,7 +333,7 @@ function mapSingleChildIntoContext(bookKeeping, child, childKey) {
   if (Array.isArray(mappedChild)) {
     // 是数组的话就回到最先调用的函数中
     // 然后回到之前 traverseAllChildrenImpl 摊平数组的问题
-    // 假如 c => [[c, c]]，当执行这个函数时，返回值应该是 [c, c]
+    // 假如 c => [[c, c]]，当。。。。。。。。。。。。。。。。。执行这个函数时，返回值应该是 [c, c]
     // 然后 [c, c] 会被当成 children 传入
     // traverseAllChildrenImpl 内部逻辑判断是数组又会重新递归执行
     // 所以说即使你的函数是 c => [[[[c, c]]]]
@@ -365,6 +365,7 @@ function mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {
     escapedPrefix = escapeUserProvidedKey(prefix) + '/';
   }
   // getPooledTraverseContext 和 releaseTraverseContext 是配套的函数
+  // 对象重用池
   // 用处其实很简单，就是维护一个大小为 10 的对象重用池
   // 每次从这个池子里取一个对象去赋值，用完了就将对象上的属性置空然后丢回池子
   // 维护这个池子的用意就是提高性能，毕竟频繁创建销毁一个有很多属性的对象消耗性能
